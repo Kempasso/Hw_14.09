@@ -45,6 +45,6 @@ queries = {
 
     'query_movie_info': """ SELECT "title", "type", "release_year", "listed_in", "description"
                             FROM netflix
-                            WHERE "type" = '{}' AND "release_year" = '{}' AND "listed_in" LIKE '{}%'
+                            WHERE "type" = '{}' AND "release_year" = '{}' AND "listed_in" LIKE '%{}%'
                         """
 }

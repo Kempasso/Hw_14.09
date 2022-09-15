@@ -1,5 +1,4 @@
 import json
-from itertools import groupby
 
 from db import get_connection, push_and_close_connection, queries
 
