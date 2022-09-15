@@ -30,7 +30,7 @@ def get_close_actors(key, first_actor, second_actor):
     dict_close_actors = dict(Counter(counter))
     close_actors = []
     for k in dict_close_actors.items():
-        if k[1] > 2:
+        if k[1] > 2 and k[0] not in (first_actor, second_actor):
             close_actors.append(k[0])
     return close_actors
 
