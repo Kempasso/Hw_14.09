@@ -19,6 +19,6 @@ def view_film_by_genre(genre):
 
 get_close_actors('query_close_actors', 'Rose McIver', 'Ben Lamb')
 
-print(get_json_movie_info(FORMATTERS['movie_info'], 'query_movie_info', 'Movie', 2020, 'Dramas'))
+get_json_movie_info(FORMATTERS['movie_info'], 'query_movie_info', 'Movie', 2020, 'Dramas')
 
 app.run()
