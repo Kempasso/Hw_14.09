@@ -40,6 +40,7 @@ queries = {
                     """,
     'query_close_actors': """ SELECT "cast"
                               FROM netflix
+                              WHERE "cast" LIKE '%{}%' AND "cast" LIKE '%{}%'
                           """,
 
     'query_movie_info': """ SELECT "title", "type", "release_year", "listed_in", "description"
