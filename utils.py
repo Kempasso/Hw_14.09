@@ -12,25 +12,9 @@ def format_to_dict(formatter, tuple_info):
     return list_of_films
 
 
-def get_films_by_title_or_release(key, formatter, *args):
+def get_films_by_parameters(key, formatter, *args):
     cursor = get_connection()
     query = queries[key].format(*args)
-    movie_info = push_and_close_connection(cursor, query)
-    json_movie_info = format_to_dict(formatter, movie_info)
-    return json_movie_info
-
-
-def get_films_by_rating(key, formatter, rating):
-    cursor = get_connection()
-    query = queries[key].format(rating)
-    movie_info = push_and_close_connection(cursor, query)
-    json_movie_info = format_to_dict(formatter, movie_info)
-    return json_movie_info
-
-
-def get_films_by_genre(key, formatter, genre):
-    cursor = get_connection()
-    query = queries[key].format(genre)
     movie_info = push_and_close_connection(cursor, query)
     json_movie_info = format_to_dict(formatter, movie_info)
     return json_movie_info
