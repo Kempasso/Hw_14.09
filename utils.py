@@ -1,6 +1,5 @@
 import json
 from collections import Counter
-from itertools import groupby
 
 from db import get_connection, push_and_close_connection, queries
 
@@ -34,27 +33,6 @@ def get_close_actors(key, first_actor, second_actor):
         if k[1] > 2:
             close_actors.append(k[0])
     return close_actors
-
-
-# def get_close_actors(key, *actors):
-#     cursor = get_connection()
-#     query = queries[key]
-#     all_casts = push_and_close_connection(cursor, query)
-#     counter = []
-#     for tuple_actors in all_casts:
-#         list_actors = str(tuple_actors[0]).split(', ')
-#         if actors[0] in list_actors and actors[1] in list_actors:
-#             list_actors.remove(actors[0])
-#             list_actors.remove(actors[1])
-#             counter += list_actors
-#         else:
-#             continue
-#     dict_close_actors = dict(Counter(counter))
-#     close_actors = []
-#     for k in dict_close_actors.items():
-#         if k[1] > 2:
-#             close_actors.append(k[0])
-#     return close_actors
 
 
 def get_json_movie_info(formatter, key, type_of, release_year, genre):
